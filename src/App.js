@@ -13,13 +13,12 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>launderUp</h1>
         {/* Use Routes instead of Switch */}
         <Routes>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/account-details" element={<AccountDetails />} />
-          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/" element={<Welcome />} />
           {/* Optionally add a catch-all route */}
           </Routes>
       </div>
