@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.wave{
+    width: 100vw;
+    height: 50vh;
+}
+
+.header{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0099ff;
+}
+
+.text{
+    font-size: 2rem;
+    font-weight:lighter;
+    padding: 40px;
+}

@@ -1,0 +1,16 @@
+.login-container {
+background-color: white;
+display: flex;
+flex-direction: column;
+height: 100vh;
+}
+
+.login-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the form vertically */
+  align-items: center;     /* Centers the form horizontally */
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+}
