@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../css/form.css';
-const Form = ({ setCurrentScreen }) => {  // Receive setCurrentScreen as a prop
+
+const Form = () => {  
+  const navigate = useNavigate();
+
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSubmit = (e) => {
@@ -28,7 +32,7 @@ const Form = ({ setCurrentScreen }) => {  // Receive setCurrentScreen as a prop
 
         <button 
           className="btn login-btn btn-outline-primary w-100 mt-3"
-          onClick={(e) => { e.preventDefault(); setCurrentScreen("verification"); }}  // Prevent form submission for this button
+          onClick={(e) => { e.preventDefault(); navigate("/verification"); }}  // Prevent form submission for this button
         >
           LOGIN
         </button>

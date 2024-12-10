@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "../components/Form.js";
+import Form from "../components/LoginForm.js";
 import Wave from '../components/Wave.js';
 import "../css/login.css"; // Include custom CSS
-const Login = ({ setCurrentScreen }) => {
+const Login = () => {
   return (
     <div className="login-container">
       <Wave/>
       <div className="login-content">
-        <Form setCurrentScreen={setCurrentScreen} />
+        <Form/>
       </div>
     </div>
   );

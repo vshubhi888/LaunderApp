@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/splash.css"; // Include custom CSS
 
 const SplashScreen = () => {
+
+  const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/login");
+        }, 2000); // 2 seconds
+
+        return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }, [navigate]);
+    
   return (
     <div className="splash-container">
       <div>
