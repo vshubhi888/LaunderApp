@@ -5,3 +5,12 @@ body {
   background-color: #f8f9fa; /* Light gray background for pages */
 }
 
+.error-message {
+  display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the form vertically */
+    align-items: center;     /* Centers the form horizontally */
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
