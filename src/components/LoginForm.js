@@ -2,19 +2,29 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../css/form.css';
 
-const Form = () => {  
+const LoginForm = () => {  
   const navigate = useNavigate();
-
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [error, setError] = useState(''); // State for error handling
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Form Submitted with phone number: ${phoneNumber}`);
+    
+    // Basic validation to check phone number length
+    if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+      setError('Please enter a valid 10-digit phone number');
+      return;
+    }
+    
+    setError(''); // Clear error if validation passes
+
+    // Navigate to verification page with phone number as state
+    navigate("/verification", { state: { phoneNumber } });
   };
 
   return (
     <section className="form-section">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}> {/* Handle form submission */}
         <div className="form-group">
           <label htmlFor="phoneNumber" className="form-label">Enter Phone Number</label>
           <div className="input-group">
@@ -26,13 +36,17 @@ const Form = () => {
               onChange={(e) => setPhoneNumber(e.target.value)} 
               placeholder="Enter phone number" 
               className="form-control"
+              maxLength="10"  // Limit to 10 digits
             />
           </div>
         </div>
 
+        {/* Error Message Display */}
+        {error && <div className="error-message">{error}</div>}
+
         <button 
           className="btn login-btn btn-outline-primary w-100 mt-3"
-          onClick={(e) => { e.preventDefault(); navigate("/verification"); }}  // Prevent form submission for this button
+          type="submit"
         >
           LOGIN
         </button>
@@ -51,4 +65,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default LoginForm;

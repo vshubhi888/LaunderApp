@@ -6,7 +6,7 @@
 
 .wave{
     width: 100vw;
-    height: 50vh;
+    height: 45vh;
 }
 
 .header{
@@ -24,3 +24,9 @@
     font-weight:lighter;
     padding: 40px;
 }
+
+@media (min-width: 1024px) {
+    .header {
+      height: 20%; /* Change height for screens larger than 1024px */
+    }
+  }

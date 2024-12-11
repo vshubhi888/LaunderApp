@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../components/VerificationForm.js";
+import OTPVerification from "../components/VerificationForm.js";
 import Wave from '../components/Wave.js';
 import "../css/verification.css"; // Include custom CSS
 const Verification = () => {
@@ -7,7 +7,7 @@ const Verification = () => {
     <div className="verification-container">
       <Wave/>
       <div className="verification-content">
-      <Form />
+      <OTPVerification />
       </div>
     </div>
   );
