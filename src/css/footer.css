@@ -1,0 +1,57 @@
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distributes items with equal spacing */
+    align-items: center; /* Centers items vertically */
+    background-color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+    padding: 0; /* No padding around the footer */
+    width: 100%; /* Footer spans the full width */
+    height: 60px; /* Fixed height */
+  }
+  
+  .footer-item {
+    cursor: pointer;
+    flex: 1; /* Ensures all items take up equal width */
+    height: 100%; /* Make items fill the entire height of the footer */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    text-align: center; /* Ensure text is aligned */
+    border-right: 2px solid #cccccc; /* Add right border for separation */
+    
+  }
+  
+  .footer-item.active {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .footer-item.express {
+    position: absolute; /* Position it above the footer */
+    top: 0%; /* Move the button up by reducing the percentage */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Fine-tune the positioning */
+    z-index: 1;
+    display: flex; /* Center content inside if needed */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    width: 70px; /* Set a width to ensure the circle has size */
+    height: 70px; /* Set a height to ensure the circle has size */
+    box-shadow: 0 2px 5px rgba(182, 158, 21, 0.1);
+    border: 3px solid rgb(255, 255, 94); /* Add a yellow border */
+    border-radius: 50%; /* Makes the div a circle */
+    background-color: white; /* Optional: Set a background color */
+    margin-bottom: 0; /* Remove the margin or adjust if needed */
+  }
+
+  .footer-item:hover {
+    background-color: aliceblue;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .footer-item.express:hover{
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }

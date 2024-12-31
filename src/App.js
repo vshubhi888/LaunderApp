@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import AccountDetails from "./components/AccountDetails";
 import Login from "./routes/Login";
+import ServicesPage from "./routes/Services";
 import SplashScreen from "./routes/SplashScreen";
 import Verification from "./routes/Verification";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/verification" element={<Verification />} />
           <Route path="/account" element={<AccountDetails />} />
+          <Route path="/services" element={<ServicesPage />} />
           {/* Optionally add a catch-all route */}
           </Routes>
       </div>
