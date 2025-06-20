@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/account.css";
 
 const SignUpForm = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",

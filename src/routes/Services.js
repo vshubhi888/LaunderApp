@@ -1,35 +1,39 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer';
 import '../css/services.css';
-const ServicesPage = () => {
-  const services = [
-    { name: "Ironing", icon: "https://via.placeholder.com/100" },
-    { name: "Laundry", icon: "https://via.placeholder.com/100" },
-    { name: "Steam Ironing", icon: "https://via.placeholder.com/100" },
-    { name: "Dry Cleaning", icon: "https://via.placeholder.com/100" }
-  ];
+import GlobeMenu from '../components/GlobeMenu';
+const services = [
+  { icon: '/icons/ironing.png', label: 'IRONING' },
+  { icon: '/icons/dryclean.png', label: '' },
+  { icon: '/icons/laundry.png', label: 'LAUNDRY' },
+  { icon: '/icons/steam.png', label: 'STEAM IRONING' },
+];
 
-  return (
-    <div className="services-page">
-      <div className="header">
-        <div className="language-icon">🌍</div>
-        <div className="menu-icon">⋮</div>
+const ServicesPage = () => (
+  <div className="services-page">
+    <GlobeMenu />
+  
+    <div className="container-fluid py-4 bg-light min-vh-100">
+      <div className="mb-4">
+        <h2 className="fw-semibold" style={{ color: '#263238' }}>Services</h2>
       </div>
-      <div className="heading">
-      <h1>Services</h1>
-      </div>
-      
-      <div className="services-grid">
-        {services.map((service, index) => (
-          <div key={index} className="service-card">
-            <img src={service.icon} alt={service.name} className="service-icon" />
-            <h3>{service.name}</h3>
+      <div className="row g-4">
+        {services.map((s, i) => (
+          <div className="col-6" key={i}>
+            <div className="card shadow-sm border-0 rounded-4 position-relative text-center py-4 h-100">
+              <button type="button" className="btn btn-light btn-sm rounded-circle position-absolute top-0 end-0 m-2 p-0 info-btn">
+                <span className="fw-bold text-secondary" style={{ fontSize: '1.1rem' }}>i</span>
+              </button>
+              <img src={s.icon} alt={s.label} className="mx-auto d-block mb-3" style={{ width: 64, height: 64, objectFit: 'contain' }} />
+              <div className="fw-normal text-uppercase small letter-spacing-1">{s.label}</div>
+            </div>
           </div>
         ))}
       </div>
-      <Footer />
     </div>
-  );
-};
+    <Footer />
+  </div>
+);
 
 export default ServicesPage;
